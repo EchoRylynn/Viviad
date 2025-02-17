@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #webcam-container, #label-container {
+            display: none; /* Hide these elements */
+        }
+
+        #status {
+            margin: 0;
+            font-size: 2rem;
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            margin-right: -50%;
+            transform: translate(-50%, 0);
+            color: #CC0000;
+            text-align: center;
+
+        }
+       
+        #sign {
+            display: none;
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        
+    </style>
+
+    <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js"
+    type="module"></script>
+</head>
+<body onload="init()">
+    <div id="status">
+        <div>
+            <dotlottie-wc id="loadingLoop"
+            src="https://lottie.host/cc714de7-d303-492e-96c2-2cad2fe2f3a3/0r9S8VtEPt.lottie"
+            autoplay
+            loop>
+        </dotlottie-wc>
+        <p>Loading...</p>
+        </div>
+    </div>
+    <div id="sign">
+        <!-- <img src="tap.jpeg" width="300"> -->
+        <video width="740" height="480" autoplay muted loop>
+            <source src="Img/anima_4.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <audio id="success-sound" src="scaned.wav"></audio> <!-- Add your success sound file here -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
