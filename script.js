@@ -17,10 +17,11 @@
         let timeoutId = null;
 
         // The Information pages of different Applications
-        const urlA = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/pPrinting.aspx"; 
-        const urlB = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing.aspx"; 
-        const urlC = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing.aspx";
-        const urlD = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing.aspx"; 
+        //FC Fast Food Package
+        const urlA = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Folding-Carton---Fast-Food-Package.aspx"; 
+        //DTO Coasters
+        const urlB = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing(1).aspx";
+        // const urlC = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing.aspx"; 
         const originalUrl = window.location.href; 
 
         // Load the image model and setup the webcam
@@ -88,6 +89,7 @@
                     clearTimeout(timeoutId);
                 }
 
+                // Background Default Class
                 if (currentClass === "Class 1") {
                     // timeoutId = setTimeout(() => {
                     //     playSuccessSound();
@@ -112,23 +114,25 @@
                           
                         }, 500); // Adjust the delay to ensure the sound plays before switching
                     }, 1000);
-                }  else if (currentClass === "Class 4") {
-                    timeoutId = setTimeout(() => {
-                        playSuccessSound();
-                        setTimeout(() => {
-                            window.location.href = urlC;
+                }  
+                
+                // else if (currentClass === "Class 4") {
+                //     timeoutId = setTimeout(() => {
+                //         playSuccessSound();
+                //         setTimeout(() => {
+                //             window.location.href = urlC;
                           
-                        }, 500); // Adjust the delay to ensure the sound plays before switching
-                    }, 1000);
-                }  else if (currentClass === "Class 5") {
-                    timeoutId = setTimeout(() => {
-                        playSuccessSound();
-                        setTimeout(() => {
-                            window.location.href = urlD;
+                //         }, 500); // Adjust the delay to ensure the sound plays before switching
+                //     }, 1000);
+                // }  else if (currentClass === "Class 5") {
+                //     timeoutId = setTimeout(() => {
+                //         playSuccessSound();
+                //         setTimeout(() => {
+                //             window.location.href = urlD;
                           
-                        }, 500); // Adjust the delay to ensure the sound plays before switching
-                    }, 1000);
-                }
+                //         }, 500); // Adjust the delay to ensure the sound plays before switching
+                //     }, 1000);
+                // }
 
                 lastClass = currentClass;
             }
