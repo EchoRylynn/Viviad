@@ -25,8 +25,8 @@ Modify the following constants in the script as needed:
 ```python
 # Configuration
 URL = "http://127.0.0.1:5500/pre-index.html"  # Target URL
-INACTIVITY_THRESHOLD = 5  # Time in seconds before detecting inactivity
-NOTIFICATION_COUNTDOWN = 5  # Countdown before opening URL
+INACTIVITY_THRESHOLD = 10  # Time in seconds before detecting inactivity
+NOTIFICATION_COUNTDOWN = 15  # Countdown before opening URL
 BROWSER_PROCESS_NAMES = ["chrome", "firefox", "msedge"]  # List of browser names
 ```
 

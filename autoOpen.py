@@ -7,8 +7,8 @@ import tkinter as tk
 
 # Configuration
 URL = "http://127.0.0.1:5500/pre-index.html"  
-INACTIVITY_THRESHOLD = 5  # 5 seconds
-NOTIFICATION_COUNTDOWN = 5  # 5 seconds countdown before opening URL
+INACTIVITY_THRESHOLD = 10  # 10 seconds
+NOTIFICATION_COUNTDOWN = 15  # 15 seconds countdown before opening URL
 BROWSER_PROCESS_NAMES = ["chrome", "firefox", "msedge"]  # Add other browser names if needed
 
 # Global variables
@@ -118,4 +118,4 @@ def open_url_if_inactive(url, inactivity_threshold):
 if __name__ == "__main__":
     while True:
         open_url_if_inactive(URL, INACTIVITY_THRESHOLD)
-        time.sleep(10)  # Check every 10 seconds
+        time.sleep(1800)  # Check every 30mins
