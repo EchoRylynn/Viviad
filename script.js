@@ -18,10 +18,12 @@
 
         // The Information pages of different Applications
         //FC Fast Food Package
-        const urlA = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Folding-Carton---Fast-Food-Package.aspx"; 
+        const urlA = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/FC-Fast-Food-Package.aspx"; 
         //DTO Coasters
-        const urlB = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing(1).aspx";
-        // const urlC = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing.aspx"; 
+        const urlB = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing-Coasters.aspx";
+        // const urlC = "https://your_applicaitonC_info_url"; 
+        // const urlD = "https://your_applicaitonD_info_url"; 
+        // const urlE = "https://your_applicaitonE_info_url"; 
         const originalUrl = window.location.href; 
 
         // Load the image model and setup the webcam
@@ -106,6 +108,7 @@
                             window.location.href = urlA;
                         }, 500); // Adjust the delay to ensure the sound plays before switching
                     }, 1000);
+
                 } else if (currentClass === "Class 3") {
                     timeoutId = setTimeout(() => {
                         playSuccessSound();
