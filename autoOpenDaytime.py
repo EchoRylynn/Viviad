@@ -116,9 +116,10 @@ def open_url_if_inactive(url, inactivity_threshold):
         print("System is active or URL is already open.")
 
 def is_within_working_hours():
-    """Check if the current time is between 9:00 AM and 5:00 PM."""
+    """Check if the current time is between 9:00 AM and 5:00 PM on weekdays."""
     current_time = datetime.now()
-    return 9 <= current_time.hour < 17
+    # Check if today is a weekday (Monday to Friday) and time is between 9:00 AM and 5:00 PM
+    return current_time.weekday() < 5 and 9 <= current_time.hour < 17
 
 # Main loop
 if __name__ == "__main__":
@@ -129,4 +130,4 @@ if __name__ == "__main__":
             print("Outside working hours. Sleeping until 9:00 AM.")
         
         # Wait for a while (check every 30minute)
-        time.sleep(5)
+        time.sleep(1800)
