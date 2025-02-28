@@ -4,6 +4,7 @@ import psutil
 import pygetwindow as gw
 import ctypes
 import tkinter as tk
+from datetime import datetime
 
 # Configuration
 URL = "http://127.0.0.1:5500/pre-index.html"  
@@ -53,7 +54,7 @@ def show_notification(url, countdown):
     def update_countdown():
         nonlocal countdown
         if countdown > 0 and user_action is None:
-            label.config(text=f"Opening in {countdown} seconds...")
+            label.config(text=f"Back to homepage in {countdown} seconds...")
             countdown -= 1
             root.after(1000, update_countdown)
         elif user_action is None:  # If no action taken, open URL
@@ -82,7 +83,7 @@ def show_notification(url, countdown):
     root.geometry("350x150")
     root.resizable(False, False)
 
-    label = tk.Label(root, text=f"Opening in {countdown} seconds...", font=("Arial", 12))
+    label = tk.Label(root, text=f"Back to homepage in {countdown} seconds...", font=("Arial", 12))
     label.pack(pady=10)
 
     button_frame = tk.Frame(root)
@@ -114,8 +115,18 @@ def open_url_if_inactive(url, inactivity_threshold):
     else:
         print("System is active or URL is already open.")
 
+def is_within_working_hours():
+    """Check if the current time is between 9:00 AM and 5:00 PM."""
+    current_time = datetime.now()
+    return 9 <= current_time.hour < 17
+
 # Main loop
 if __name__ == "__main__":
     while True:
-        open_url_if_inactive(URL, INACTIVITY_THRESHOLD)
-        time.sleep(1800)  # Check every 30mins
+        if is_within_working_hours():  # Only run between 9:00 AM and 5:00 PM
+            open_url_if_inactive(URL, INACTIVITY_THRESHOLD)
+        else:
+            print("Outside working hours. Sleeping until 9:00 AM.")
+        
+        # Wait for a while (check every 30minute)
+        time.sleep(5)

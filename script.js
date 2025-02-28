@@ -21,7 +21,7 @@
         const urlA = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/FC-Fast-Food-Package.aspx"; 
         //DTO Coasters
         const urlB = "https://canonpp.sharepoint.com/sites/Eureka/SitePages/Direct-to-Object-Printing-Coasters.aspx";
-        // const urlC = "https://your_applicaitonC_info_url"; 
+        // const urlC = "https://your_applicaitonD_info_url/"; 
         // const urlD = "https://your_applicaitonD_info_url"; 
         // const urlE = "https://your_applicaitonE_info_url"; 
         const originalUrl = window.location.href; 
